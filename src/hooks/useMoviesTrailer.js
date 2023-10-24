@@ -6,14 +6,22 @@ import { useEffect } from "react";
 const useMoviesTrailer = (movieId) => {
     const dispatch = useDispatch();
     // fetch trailer video   &&  updating  the with trailer video data
-    const getMovieVideos = async () => {
-      const data = await fetch(
-        "https://api.themoviedb.org/3/movie/299054/videos?language=en-US",
-        API_OPTIONS
-      );
+    // const getMovieVideos = async () => {
+    //   const data = await fetch(
+    //     "https://api.themoviedb.org/3/movie/299054/videos?language=en-US",
+    //     API_OPTIONS
+    //   );
   
-      const json = await data.json();
-      console.log(json);
+    //   const json = await data.json();
+    //   console.log(json);
+      const getMovieVideos = async () => {
+             const data = await fetch(
+                "https://api.themoviedb.org/3/movie/" +
+                 movieId +
+                 "/videos?language=en-US",
+                API_OPTIONS
+              );
+              const json = await data.json();
   
       const filterData = json.results.filter((video) => video.type === "Trailer");
       const trailer = filterData.length ? filterData[0] : json.results[0];

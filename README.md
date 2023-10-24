@@ -23,11 +23,11 @@
 - Custom hooks for now playing movies list APi
 - Create movbieSlice
 - Update store with movies data
-- planning for maincontauiner & Secondery container
+- planning for main container & Secondery container
 - Fetch data for Trailer Video data
 - Update store with the trailer video data
 - Embedded the youtube video and make it autoplay and mute 
-- Tailwind classes to make it look awesome
+- Tailwind classes to make it  main container  look awesome
 
 
 # Features 
