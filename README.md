@@ -14,6 +14,20 @@
 - Implement Sign In User Api
 - Created redux Store with userSlice
 - Update Profile
+- BugFix Sign up user displayNamed and profile picture update
+- BugFix if the user is not logged in redirect / browse to login page and vice- versa
+- unsubscribe to the onAuthStateChanged callback
+- Add hardcoded values to the constants file
+- Register TMDB  & create an app & get  access tokan
+- Get Data fro TMDB now playing movies list API
+- Custom hooks for now playing movies list APi
+- Create movbieSlice
+- Update store with movies data
+- planning for maincontauiner & Secondery container
+- Fetch data for Trailer Video data
+- Update store with the trailer video data
+- Embedded the youtube video and make it autoplay and mute 
+- Tailwind classes to make it look awesome
 
 
 # Features 
@@ -36,7 +50,9 @@
   - Install firebase cli - npm install -g firebase-tools
   - Firebase Login - firebase login
   - initilize Firbase - firebase init , and then select Hosting 
+  - npm run build
   - Deploy command - firebase deploy
+  
 
   # Comment
 
