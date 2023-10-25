@@ -9,11 +9,11 @@ console.log(movies);
     movies.nowPlayingMovies && (
     <div className= " px-4 bg-black">
       <div  className="-mt-48 pl-4 relative z-20">
+      <MovieList  title={"Upcoming Movies"} movies={movies.upcomingMovies}/>
       <MovieList  title={"Now Playing"} movies={movies.nowPlayingMovies}/>
-      <MovieList  title={"Trending"} movies={movies.nowPlayingMovies}/>
+      <MovieList  title={"Trending"} movies={movies.topMovies}/>
       <MovieList  title={"Popular"} movies={movies.popularMovies}/>
-      <MovieList  title={"Upcoming Movies"} movies={movies.nowPlayingMovies}/>
-      <MovieList  title={"Horror"} movies={movies.nowPlayingMovies}/>
+   
       </div>
       </div>
     )
