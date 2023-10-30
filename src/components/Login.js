@@ -1,6 +1,5 @@
-import React from "react";
 import Header from "./Header";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { checkValidData } from "../utils/validate";
 import { useDispatch } from "react-redux";
 import {
@@ -12,15 +11,14 @@ import { auth } from "../utils/firebase";
 import { addUser } from "../utils/userSlice";
 import { BG_URL, PRO_URL } from "../utils/constants";
 import placeholderImage from "../components/img/mobile-v.jpg";
-import placeholderImage2 from "../components/img/icons8-download-48.png";
 import Footer from "./Footer";
+import placeholderVideo from "../components/Video/Virat Kohli.mp4";
 
 const Login = () => {
-
-
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
   const imageUrl = placeholderImage;
+  const videoUrl = placeholderVideo;
   const dispatch = useDispatch();
 
   const name = useRef(null);
@@ -87,6 +85,18 @@ const Login = () => {
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
   };
+
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    // Play the video when the component mounts
+    if (videoRef.current) {
+      videoRef.current.play().catch((error) => {
+        // Handle any potential errors with autoplay
+        console.error("Autoplay failed: ", error);
+      });
+    }
+  }, []);
   return (
     <>
       <div>
@@ -165,11 +175,18 @@ const Login = () => {
                   </div>
                   <div class="px-3 flex flex-row   m-2 text-sm font-semibold text-blue-800">
                     Downloading...
-                    <img
+                    {/* <img
                       className="-m-0 mx-2 h-5 w-5 "
                       src={placeholderImage2}
                       alt=""
-                    />
+                    /> */}
+                    <div class="download__gif__container -m-2 mx-2 h-10 w-10">
+                      <img
+                        src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif"
+                        alt="downloading gif"
+                        class="gif"
+                      />
+                    </div>
                   </div>
                 </div>
               </form>
@@ -188,27 +205,45 @@ const Login = () => {
           </form>
         </div>
       </div>
-      <div className="absolute w-full  my-[84.5%] text-white border-t-4 border-gray-700  bg-black opacity-100 ">
-        <div class="flex flex-wrap font-san p-20 justify-center">
-          <form className="flex font-san ">
+  
+      <div className="absolute w-full h-screen  my-[84.5%]  bg-black text-white border-t-4 border-gray-700 opacity-100">
+        <div className="flex flex-wrap font-san p-10 justify-center">
+          <form className="flex font-san text-white bg-black">
             <div className="py-20 px-0 m-0">
               <p className="items-stretch text-5xl p-5 px-0 w-full mx-auto text-center font-extrabold">
                 Watch everywhere
               </p>
-              <p className="text-lg w-full  mx-auto text-center font-bold">
-                Stream unlimited movies on your phone, tablet and laptop.
+              <p className="text-lg w-full mx-auto text-center font-bold">
+                Stream unlimited movies on your phone, tablet, and laptop.
               </p>
             </div>
             <div>
               <img
                 alt=""
+                className="relative items-stretch"
                 src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-in.png"
-
               />
+              <div className="mx-32 -my-[74%]">
+                <video
+                  ref={videoRef}
+                  autoplay
+                  playsinline
+                  muted
+                  loop
+                  class="w-64 h-36 md:w-96 md:h-48 lg:w-128 lg:h-72"
+                >
+                  <source
+                    className="relative"
+                    src={videoUrl}
+                    type="video/mp4"
+                  />
+                </video>
               </div>
+            </div>
           </form>
         </div>
       </div>
+
       <div className="absolute w-full  my-[122.5%] left-0 text-white border-t-4 border-gray-700  bg-black opacity-100 ">
         <Footer />
       </div>
