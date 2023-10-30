@@ -101,7 +101,7 @@ const Login = () => {
     <>
       <div>
         <Header />
-        <div className="absolute">
+        <div className="absolute bg-black">
           <img
             className="min-h-screen object-covers opacity-100"
             src={BG_URL}
@@ -109,15 +109,15 @@ const Login = () => {
           />
         </div>
 
-        <p className="absolute items-stretch text-4xl w-full p-[5%] mx-auto text-center text-white font-extrabold">
+        <p className="hidden md:block absolute items-stretch p-14 md:text-4xl md:w-full md:p-[5%] mx-auto text-center text-white font-extrabold">
           Laughter. Tears. Thrills. Find it all on NetflixGPT.
         </p>
-        <p className="absolute  text-lg w-full p-[8%] mx-auto text-center text-white font-bold">
+        <p className="absolute p-20 md:text-lg w-full md:p-[8%] md:mx-auto text-center text-white font-bold">
           Unlimited amusement commences at absolutely no cost.
         </p>
         <form
           onSubmit={(e) => e.preventDefault()}
-          className="w-full md:w-3/12 absolute p-6 bg-black my-40 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80"
+          className="w-full md:w-3/12 absolute p-9 m-10 bg-black my-40 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80"
         >
           <h1 className="font-bold text-3xl py-4">
             {isSignInForm ? "Sign In" : "Sign Up"}
@@ -157,34 +157,34 @@ const Login = () => {
           </p>
         </form>
       </div>
-      <div className="absolute w-full  my-[55.5%] text-white  border-t-4 border-gray-700 bg-black opacity-100 ">
-        <div class="flex flex-wrap font-san p-20 justify-center">
-          <div class="flex-wrap p-30 w-48  relative ">
+      <div className="absolute w-full my-[190%]  md:my-[55.5%] text-white  border-t-4 border-gray-700 bg-black opacity-100 ">
+        <div class="flex flex-wrap font-san p-10 md:p-20 justify-center">
+          <div class="flex-wrap md:p-30 md:w-48  relative ">
             <img src={imageUrl} alt="" loading="lazy" />
 
             <div className="-mx-6  -m-[30%] bg-black opacity-90 border-4 border-gray-800 rounded-lg ">
               <form className="px-5 py-2 flex flex-row  w-full font-light bg-black   text-white rounded-lg bg-opacity-80">
                 <img
                   alt=""
-                  className="h-15 w-10"
+                  className="md:h-15 md:w-10"
                   src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/boxshot.png"
                 />
                 <div>
-                  <div class=" m-2 px-4 text-sm font-bold text-white ">
+                  <div class=" m-2 md:px-4 text-sm font-bold text-white ">
                     Stranger Things
                   </div>
-                  <div class="px-3 flex flex-row   m-2 text-sm font-semibold text-blue-800">
+                  <div class="md:px-3 flex flex-row m-3   md:m-2 text-sm font-semibold text-blue-800">
                     Downloading...
                     {/* <img
                       className="-m-0 mx-2 h-5 w-5 "
                       src={placeholderImage2}
                       alt=""
                     /> */}
-                    <div class="download__gif__container -m-2 mx-2 h-10 w-10">
+                    <div class="md:download__gif__container md:-m-2 m-3 md:mx-2 md:h-10 md:w-10">
                       <img
                         src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif"
                         alt="downloading gif"
-                        class="gif"
+                        class=""
                       />
                     </div>
                   </div>
@@ -194,11 +194,11 @@ const Login = () => {
           </div>
 
           <form className="flex font-san ">
-            <div className="py-20 px-4 m-">
-              <p className="items-stretch text-4xl p-5 w-full mx-auto text-center font-extrabold">
+            <div className="md:py-20 md:px-4 m-">
+              <p className="items-stretch md:text-4xl md:p-5 w-full mx-auto text-center font-extrabold">
                 Download your shows to watch offline
               </p>
-              <p className="text-lg w-full  mx-auto text-center font-bold">
+              <p className="md:text-lg w-full  mx-auto text-center font-bold">
                 Save your favourites easily and always have something to watch.
               </p>
             </div>
@@ -206,11 +206,11 @@ const Login = () => {
         </div>
       </div>
   
-      <div className="absolute w-full h-screen  my-[84.5%]  bg-black text-white border-t-4 border-gray-700 opacity-100">
+      <div className="absolute w-full h-screen my-[295%]  md:my-[84.5%]  bg-black text-white border-t-4 border-gray-700 opacity-100">
         <div className="flex flex-wrap font-san p-10 justify-center">
           <form className="flex font-san text-white bg-black">
-            <div className="py-20 px-0 m-0">
-              <p className="items-stretch text-5xl p-5 px-0 w-full mx-auto text-center font-extrabold">
+            <div className="md:py-20 md:px-0 m-0">
+              <p className="items-stretch md:text-5xl md:p-5 px-0 w-full mx-auto text-center font-extrabold">
                 Watch everywhere
               </p>
               <p className="text-lg w-full mx-auto text-center font-bold">
@@ -244,7 +244,7 @@ const Login = () => {
         </div>
       </div>
 
-      <div className="absolute w-full  my-[122.5%] left-0 text-white border-t-4 border-gray-700  bg-black opacity-100 ">
+      <div className="absolute w-full my-[370%] md:my-[122.5%] left-0 text-white border-t-4 border-gray-700  bg-black opacity-100 ">
         <Footer />
       </div>
     </>
